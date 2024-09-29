@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Fredoka";
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5a5c7b;
+    padding: 20px 30px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+.searchbox {
+    position: relative;
+    margin-left: 20px;
+}
+
+.searchbox .searchbox-main-input {
+    width: 125px;
+    outline: none;
+    border: 2px solid rgb(232, 231, 231);
+    background: white;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.searchbox button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 14px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    color: #333;
+    background: transparent;
+    cursor: pointer;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 83vh;
+    background: rgb(236, 236, 236);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+
+main .left_section {
+    width: 40%;
+    height: 55vh;
+    padding-left: 60px;
+}
+
+main .left_section h1 {
+    font-size: 46px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px 0;
+}
+
+main .left_section p {
+    font-size: 22px;
+    font-weight: 600;
+    width: 300px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 2px 10px;
+}
+
+main .left_section .p1 {
+    color: black;
+    background: white;
+    border-radius: 20px;
+    padding-left: 20px;
+}
+
+main .left_section .p2 {
+    font-size: 20px;
+    -webkit-text-stroke: 1px black;
+    background: rgb(92, 97, 129);
+    border-radius: 20px;
+    color: white;
+    padding-right: 10px;
+    padding-left: 150px;
+}
+
+main .left_section .btns {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    padding: 10px 5px;
+}
+
+main .left_section .btns button {
+    padding: 8px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+}
+
+main .left_section .btns .supportme {
+    background-color: #fff;
+    color: #000;
+    margin: 0 5px;
+}
+
+main .left_section .btns .getstart {
+    background-color: #5c6181;
+    color: #fff;
+    position: relative;
+}
+
+main .right_section {
+    width: 50%;
+}
+
+main .right_section img {
+    width: 100%;
+}
+
+.footer {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    background: #43455e;
+    white-space: nowrap;
+}
+
+.footer span {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #5a5c7b;
+        width: 100%;
+        z-index: 1000;
+        padding: 0 0 20px 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .menu a, div{
+        padding: 10px 0;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    main .left_section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    main .right_section {
+        width: 100%;
+        order: 1;
+        padding: 20px;
+    }
+
+    main .left_section h1 {
+        font-size: 28px;
+    }
+
+    main .left_section p {
+        font-size: 16px;
+        width: 60vw;
+    }
+
+    main .left_section .p1,
+    main .left_section .p2 {
+        padding: 3px 10px;
+    }
+
+    main .left_section .p2{
+        font-size: 15px;
+        padding-left: 28vw;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
+    
+    .footer span{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 400px) {
+    .navbar {
+        padding: 15px 25px;
+    }
+
+    .menu {
+        padding: 0 0 25px 0;
+    }
+
+    .menu a, div {
+        padding: 12px 0;
+    }
+
+    main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    main .left_section {
+        width: 100%;
+        padding: 25px;
+    }
+
+    main .right_section {
+        width: 100%;
+        order: 1;
+        padding: 25px;
+    }
+
+    main .left_section h1 {
+        font-size: 32px;
+    }
+
+    main .left_section p {
+        font-size: 18px;
+        width: 200px;
+    }
+
+    main .left_section .p1,
+    main .left_section .p2 {
+        padding: 5px 12px;
+    }
+
+    main .left_section .p2 {
+        font-size: 16px;
+        padding-left: 80px;
+    }
+
+    .footer {
+        font-size: 15px;
+    }
+
+    .footer span {
+        font-size: 18px;
+    }
+}

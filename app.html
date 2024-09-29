@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainy_App</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Rainy</h1>
+            <div class="search-container">
+                <input type="text" class="search-bar-app" placeholder="Search city...">
+                <button class="search-button-app"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <h2 class="city">City</h2>
+            <div class="temperature">?°C</div>
+            <img class="weather-icon" src="" alt="">
+            <p class="description">Weather Condition</p>
+            <div class="additional-info">
+                <p class="Humidity_info">Humidity: ?</p>
+                <p class="rain_info">Will it rain today: ?</p>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="btn_home">Home</button>
+            <button class="btn_contact">Contact</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.querySelector('.btn_home').addEventListener('click', ()=>{location.href = 'http://127.0.0.1:5500/'});
+        document.querySelector('.btn_contact').addEventListener('click', ()=>{location.href = 'https://google.com'});
+    </script>
+</body>
+</html>
