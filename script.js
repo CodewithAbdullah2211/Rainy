@@ -1,8 +1,13 @@
-
 // Common functionality
 const fetchdata = async (q = 'auto:ip') => {
     const api_key = 'd37dfef720b34c6f9b1151923242509';
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${q}&aqi=yes`;
+
+    // Get the loader element
+    const loader = document.querySelector('.loader');
+
+    // Show the loader
+    if (loader) loader.style.display = 'block';
 
     try {
         const response = await fetch(url);
@@ -37,23 +42,9 @@ const fetchdata = async (q = 'auto:ip') => {
     } catch (error) {
         console.error('Error fetching data:', error);
         alert('Invalid Input');
-    }
-};
-
-// Main page functionality
-const mainPage = () => {
-    const searchbox_main_btn = document.querySelector('.search-main-button');
-
-    if (searchbox_main_btn) {
-        searchbox_main_btn.addEventListener('click', () => {
-            const searchbox_main_input_value = document.querySelector('.searchbox-main-input').value;
-            if (searchbox_main_input_value) {
-                localStorage.setItem('searchQuery', searchbox_main_input_value);
-                location.href = 'app.html'; // Redirect to the app page
-            } else {
-                alert("Enter City name, zip postal or country name.");
-            }
-        });
+    } finally {
+        // Hide the loader after data is fetched
+        if (loader) loader.style.display = 'none';
     }
 };
 
