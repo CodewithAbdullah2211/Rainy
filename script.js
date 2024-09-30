@@ -48,6 +48,33 @@ const fetchdata = async (q = 'auto:ip') => {
     }
 };
 
+// Main page functionality
+const mainPage = () => {
+    const searchbox_main_btn = document.querySelector('.search-main-button');
+    const searchbox_main_input = document.querySelector('.searchbox-main-input');
+
+    if (searchbox_main_btn && searchbox_main_input) {
+        searchbox_main_btn.addEventListener('click', () => {
+            const searchbox_main_input_value = searchbox_main_input.value;
+            if (searchbox_main_input_value) {
+                localStorage.setItem('searchQuery', searchbox_main_input_value);
+                location.href = 'app.html'; // Redirect to the app page
+            } else {
+                alert("Enter City name, zip postal or country name.");
+            }
+        });
+    }
+
+    // Automatically set the input field on load
+    window.addEventListener('DOMContentLoaded', () => {
+        const searchQuery = localStorage.getItem('searchQuery');
+        if (searchQuery) {
+            searchbox_main_input.value = searchQuery; // Set the input field
+            localStorage.removeItem('searchQuery'); // Clear the stored query
+        }
+    });
+};
+
 // App page functionality
 const appPage = () => {
     const searchbox_app_btn = document.querySelector('.search-button-app');
