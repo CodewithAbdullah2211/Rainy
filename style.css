@@ -131,6 +131,7 @@ main .left_section .btns button {
     cursor: pointer;
     outline: none;
     border-radius: 5px;
+    margin: 0 3px;
 }
 
 main .left_section .btns .supportme {
