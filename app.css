@@ -108,6 +108,30 @@ body {
     background-color: #4a4f65;
 }
 
+/* loader */
+.loader{
+    display: none;
+    font-size: 48px;
+    font-weight: bolder;
+    color: grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: loader_animation 1s ease infinite forwards;
+}
+
+@keyframes loader_animation{
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50%{
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 15px;
@@ -173,5 +197,9 @@ body {
 
     .footer button {
         padding: 4px 6px;
+    }
+
+    .loader{
+        font-size: 40px;
     }
 }
